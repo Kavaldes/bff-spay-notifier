@@ -1,0 +1,1 @@
+En esta seccion puedes crear los modelos de negocio que debas estandarizar.

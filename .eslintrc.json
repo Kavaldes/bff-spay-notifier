@@ -1,0 +1,36 @@
+{
+  "env": {
+    "node": true,
+    "commonjs": true,
+    "browser": true,
+    "es2021": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:node/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "parserOptions": {
+    "ecmaVersion": 12
+  },
+  "rules": {
+    "indent": ["error", 2], // Usa una sangría de 2 espacios
+    "quotes": ["error", "single"], // Usa comillas simples
+    "semi": ["error", "always"], // Siempre usa punto y coma al final de una línea
+    "comma-dangle": ["error", "always-multiline"], // Agrega una coma al final de cada elemento en una lista de varios elementos
+    "no-console": "warn", // Evita el uso de console.log en el código final (advertencia)
+
+    // Reglas específicas de Node.js
+    "node/no-extraneous-require": "off", // Permite requerir módulos no declarados en package.json
+    "node/no-missing-require": "off", // Permite requerir módulos que no existen
+    "node/no-unpublished-require": "off", // Permite requerir módulos que no están publicados en npm
+    "node/no-unsupported-features/es-syntax": [
+      "error",
+      { "ignores": ["modules"] }
+    ] // Evita el uso de características de ES6 no admitidas (excepto módulos)
+  },
+  "globals": {
+    "process": true, // Define "process" como una variable global de solo lectura
+    "__dirname": true // Define "__dirname" como una variable global de solo lectura
+  }
+}
